@@ -5,11 +5,13 @@
   /* istanbul ignore next */
   var angular = window.angular ? window.angular : 'undefined' !== typeof require ? require('angular') : undefined;
 
-  function AngularChartController($scope, $element, $q, baseConfiguration, AngularChartService) {
+  function AngularChartController($scope, $element, $q, baseConfiguration, AngularChartService, $timeout) {
     var configuration = angular.copy(baseConfiguration);
     var chartService = null;
 
-    activate();
+    $timeout(function(){
+      activate();
+    }
 
     ////////////
 
